@@ -17,8 +17,7 @@ Vamos mostrar um exemplo prático de como eu posso criar um Card reutilizável, 
 Inicialmente iremos criar o layout que agirá como template para nosso card.
 
 `custom_card.xml`
-```
-#!xml
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <merge
@@ -72,8 +71,7 @@ Podemos observar que não temos um ViewGroup como parent neste layout. Estamos u
 Após isso, iremos criar uma subclasse do `ViewGroup` que será o parent do nosso layout. Em nosso caso, queremos criar um card reutilizável.
 
 `MyCustomCard.java`
-```
-#!java
+```java
 
 public class MyCustomCard extends CardView {
 
@@ -92,8 +90,7 @@ Iremos adicionar um atributo chamado `cardType`, que nos permite escolher entre 
 
 `attrs.xml`
 
-```
-#!xml
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -114,8 +111,7 @@ Nosso atributo tem formato de `enum`, que contempla as duas opções mencionadas
 Após isso, iremos criar dois novos layouts, `card_a.xml` e `card_b.xml`, que terão o conteúdo dinâmico do nosso card:
 
 `card_a.xml`
-```
-#!xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -141,8 +137,7 @@ Após isso, iremos criar dois novos layouts, `card_a.xml` e `card_b.xml`, que te
 ```
 
 `card_b.xml`
-```
-#!xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -170,8 +165,7 @@ Após isso, iremos criar dois novos layouts, `card_a.xml` e `card_b.xml`, que te
 Após isso, iremos modificar o `MyCustomCard.java` para que, baseado em nosso atributo, infle os layouts desejados no local do placeholder.
 
 
-```
-#!java
+```java
 
 public class MyCustomCard extends CardView {
 
@@ -271,8 +265,7 @@ Para utilizar o card, basta adicionarmos nosso card em um layout qualquer, como 
 `activity_main.xml`
 
 
-```
-#!xml
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
