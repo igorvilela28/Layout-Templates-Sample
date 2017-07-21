@@ -2,7 +2,7 @@ Recentemente o design da empresa em que trabalho decidiu fazer uma reformulaçã
 
 Para montar o novo design desta telas, basicamente eu teria um coordinator Layout, com um card sobrepondo o coordinator, no qual o próprio conteúdo do card tinha a sua estrutura de widgets parecida, com algumas pequenas diferenças aqui e ali.
 
-Como sabemos, infelizmente o framework do Android não nos permite de forma nativa ter uma estrutura de templates parecida com o desenvolvimento web, onde podemos definir partes estáticas e dinâmicas de um layout, para o reuso. Uma das formas de reutilização de layouts presente no framework é utilizar a tag `include`, que nos permite inserir um layout completo, mas não conseguimos modificar muito o conteúdo do mesmo, apenas atributos do tipo `layout`.
+Como sabemos, infelizmente o framework do Android não nos permite de forma nativa ter uma estrutura de templates parecida com o desenvolvimento web, onde podemos definir partes estáticas e dinâmicas de um layout, para o reuso. Uma das formas de reutilização de layouts presente no framework é utilizar a tag `include`, que nos permite inserir um layout completo, mas não conseguimos modificar muito o conteúdo do mesmo, apenas atributos tipo `layout` do parent do layout sendo incluido.
 
 Utilizar a tag `include` não seria útil no meu caso, visto que eu não conseguiria modificar apenas algumas partes do card, nem reutilizar todo o sistema de ter o coordinator com o card sobreposto, visto que o resto do conteúdo dos layouts não era totalmente igual.
 
@@ -15,7 +15,6 @@ Custom views permitem não só reutilizar layouts, como inserir lógica em nossa
 Vamos mostrar um exemplo prático de como eu posso criar um Card reutilizável, na qual a estrutura da parte superior e inferior é estática, mas queremos que o que está entre seja dinâmico.
 
 Inicialmente iremos criar o layout que agirá como template para nosso card.
-
 
 `custom_card.xml`
 ```
@@ -302,6 +301,8 @@ Para utilizar o card, basta adicionarmos nosso card em um layout qualquer, como 
 </LinearLayout>
 
 ```
+![example](https://github.com/igorvilela28/Layout-Templates-Sample/blob/master/wiki/screenshots/layout-template-sample.png?raw=true)
+
 
 Ah, e o mais legal de tudo, quando você troca o cardType, você consegue ver as modificações ocorrerem no editor de Layout, não é necessário ter que instalar o app para ver somente em tempo de execução. =)
 
